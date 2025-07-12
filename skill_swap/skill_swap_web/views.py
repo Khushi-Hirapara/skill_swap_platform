@@ -35,15 +35,3 @@ def profile_view(request, username):
         'form': form,
     }
     return render(request, 'skill.html', context)
-
-def swap_skill(request, profile_id):
-    profile = get_object_or_404(Profile, id=profile_id)
-    return render(request, 'swap_skill.html', {'profile': profile})
-
-def skill_detail(request, profile_id):
-    profile = get_object_or_404(Profile, id=profile_id)
-    return render(request, 'skill_detail.html', {'profile': profile})
-
-
-
-
