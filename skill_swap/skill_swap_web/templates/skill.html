@@ -20,15 +20,7 @@
 </head>
 <body>
 
-<!-- Navigation -->
-<div class="top-bar d-flex justify-content-between align-items-center">
-  <div class="d-flex align-items-center">
-    <h5 class="mb-0 me-4">🌐 Skill Swap Platform</h5>
-    <a href="#" class="text-dark fw-semibold me-3 text-decoration-none">Swap Request</a>
-    <a href="#" class="text-dark fw-semibold text-decoration-none">Home</a>
-  </div>
-  <img src="{% static 'profile.jpg' %}" class="avatar" alt="User Avatar" />
-</div>
+
 
 <!-- Main Profile Content -->
 <div class="container my-5">
@@ -36,11 +28,14 @@
     
     <!-- Left Section -->
     <div class="col-md-8">
-      <button class="request-btn">+ Request</button>
+      <button class="request-btn" data-bs-toggle="modal" data-bs-target="#requestModal">+ Request</button>
       <div class="d-flex justify-content-between align-items-center mb-3">
         <h3 class="fw-bold text-dark">👤 Marc Demo</h3>
-
+        
       </div>
+      
+
+      
 
       <div>
         <div class="section-title">Skills Offered</div>
@@ -64,6 +59,47 @@
     <!-- Right Section -->
     <div class="col-md-4 d-flex justify-content-center mt-4 mt-md-0">
       <div class="profile-photo">Profile Photo</div>
+    </div>
+  </div>
+</div>
+
+<!-- Swap Request Modal -->
+<div class="modal fade" id="requestModal" tabindex="-1" aria-labelledby="requestModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content shadow-lg border-0 rounded-4">
+      <div class="modal-header border-0">
+        <h5 class="modal-title fw-bold" id="requestModalLabel">Send a Swap Request</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <form method="post" action="">
+        {% csrf_token %}
+        <div class="modal-body">
+
+          <label for="offered_skill" class="form-label">Choose one of your offered skills</label>
+          <select class="form-select mb-3" id="offered_skill" name="offered_skill" required>
+            <option selected disabled>-- Select Skill --</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <!-- Add dynamically from user if needed -->
+          </select>
+
+          <label for="wanted_skill" class="form-label">Choose one of their wanted skills</label>
+          <select class="form-select mb-3" id="wanted_skill" name="wanted_skill" required>
+            <option selected disabled>-- Select Skill --</option>
+            <option value="Photoshop">Photoshop</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <!-- Add dynamically from profile if needed -->
+          </select>
+
+          <label for="message" class="form-label">Message</label>
+          <textarea class="form-control rounded-3" id="message" name="message" rows="3" placeholder="Add a message (optional)"></textarea>
+
+        </div>
+        <div class="modal-footer border-0">
+          <button type="submit" class="btn btn-primary px-4">Submit</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
