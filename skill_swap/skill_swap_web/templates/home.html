@@ -1,3 +1,95 @@
-<html>
-    <h1>Welcome to Skill Swap</h1>
-<html>
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}Home - Skill Swap Platform{% endblock title %}
+
+{% block content %}
+<div class="container py-4">
+
+  <!-- Search / Filter Bar -->
+  <div class="row mb-4 justify-content-end">
+    <div class="col-auto">
+      <select class="form-select">
+        <option selected>Availability</option>
+        <option>Available</option>
+        <option>Unavailable</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <input type="text" class="form-control" placeholder="Search skills or people" />
+    </div>
+    <div class="col-auto">
+      <button class="btn btn-primary">Search</button>
+    </div>
+  </div>
+
+  <!-- Profile Cards -->
+  <div class="profile-card d-flex align-items-center">
+    <div class="profile-photo">Profile Photo</div>
+    <div class="flex-grow-1">
+      <h5>Marc Demo</h5>
+      <p><strong class="text-success">Skills Offered => </strong>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">Python</span>
+      </p>
+      <p><strong class="text-primary">Skill Wanted => </strong>
+        <span class="skill-badge">Photoshop</span>
+        <span class="skill-badge">Graphic Designer</span>
+      </p>
+    </div>
+    <div class="text-end">
+      <button class="request-btn">Request</button>
+      <div class="text-muted mt-2">Rating: 3.9/5</div>
+    </div>
+  </div>
+
+  <div class="profile-card d-flex align-items-center">
+    <div class="profile-photo">Profile Photo</div>
+    <div class="flex-grow-1">
+      <h5>Michelle</h5>
+      <p><strong class="text-success">Skills Offered => </strong>
+        <span class="skill-badge">React</span>
+        <span class="skill-badge">Node.js</span>
+      </p>
+      <p><strong class="text-primary">Skill Wanted => </strong>
+        <span class="skill-badge">UI/UX</span>
+        <span class="skill-badge">Figma</span>
+      </p>
+    </div>
+    <div class="text-end">
+      <button class="request-btn">Request</button>
+      <div class="text-muted mt-2">Rating: 4.5/5</div>
+    </div>
+  </div>
+
+  <div class="profile-card d-flex align-items-center">
+    <div class="profile-photo">Profile Photo</div>
+    <div class="flex-grow-1">
+      <h5>Joe Wills</h5>
+      <p><strong class="text-success">Skills Offered => </strong>
+        <span class="skill-badge">Java</span>
+        <span class="skill-badge">C++</span>
+      </p>
+      <p><strong class="text-primary">Skill Wanted => </strong>
+        <span class="skill-badge">Illustrator</span>
+      </p>
+    </div>
+    <div class="text-end">
+      <button class="request-btn">Request</button>
+      <div class="text-muted mt-2">Rating: 4.0/5</div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <nav aria-label="Profile pagination">
+    <ul class="pagination justify-content-center mt-4">
+      <li class="page-item"><a class="page-link" href="#">&lt;</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">&gt;</a></li>
+    </ul>
+  </nav>
+
+</div>
+{% endblock content %}
