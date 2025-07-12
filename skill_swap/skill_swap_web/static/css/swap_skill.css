@@ -1,0 +1,76 @@
+    body {
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .top-bar {
+      background-color: white;
+      border-bottom: 1px solid #dee2e6;
+      padding: 10px 30px;
+    }
+
+    .top-bar h4 {
+      margin: 0;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .request-card {
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 25px;
+      background-color: #fff;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);
+      border-left: 4px solid transparent;
+    }
+
+    .request-card.rejected {
+      border-color: #dc3545;
+    }
+
+    .profile-photo {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      margin-right: 20px;
+    }
+
+    .skill-badge {
+      background-color: #e6f2ff;
+      color: #004085;
+      margin: 3px;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 13px;
+      display: inline-block;
+    }
+
+    .status {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .status-pending { color: orange; }
+    .status-accepted { color: green; }
+    .status-rejected { color: red; }
+
+    .pagination .page-item .page-link {
+      border-radius: 10px;
+      margin: 0 3px;
+    }
+
+    .pagination .active .page-link {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: white;
+    }

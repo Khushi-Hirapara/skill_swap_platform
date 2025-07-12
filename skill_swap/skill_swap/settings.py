@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'skill_swap_web', #app name
+    'account', #app name  
 ]
 
 MIDDLEWARE = [

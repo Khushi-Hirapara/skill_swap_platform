@@ -1,0 +1,77 @@
+ body {
+      background: linear-gradient(to right, #eef2f3, #8e9eab);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .chip {
+      display: inline-block;
+      padding: 5px 12px;
+      margin: 3px;
+      font-size: 14px;
+      background-color: #e3f2fd;
+      border-radius: 25px;
+      color: #007bff;
+      border: 1px solid #b6e0fe;
+    }
+
+    .chip .remove {
+      margin-left: 8px;
+      cursor: pointer;
+      color: #dc3545;
+      font-weight: bold;
+    }
+
+    .form-section {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .profile-pic-box {
+      border: 2px dashed #ccc;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+      background-color: #f9f9f9;
+    }
+
+    .btn-link-red {
+      color: red;
+      text-decoration: none;
+    }
+
+    .top-bar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #dee2e6;
+      padding: 15px 30px;
+    }
+
+    .top-bar a {
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: 500;
+    }
+
+    .top-bar .btn-save {
+      color: green;
+      font-weight: bold;
+    }
+
+    .top-bar .btn-discard {
+      color: red;
+      font-weight: bold;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
