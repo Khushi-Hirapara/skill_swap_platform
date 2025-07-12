@@ -9,7 +9,7 @@ from django.contrib.auth.forms import AuthenticationForm
 
 def signupaccount(request):
     if request.method == 'GET':
-        return render(request, 'signup.html',{'form':UserCreationForm})
+        return render(request, 'signup.html',{'form':UserCreationForm()})
     else:
         if request.POST['password1'] == request.POST['password2']:
             try:
@@ -20,9 +20,9 @@ def signupaccount(request):
                 login(request, user)
                 return redirect('home')
             except IntegrityError:
-                return render(request,'sigup.html',{'form':UserCreationForm,'error':'Username already taken. Choose new username.'})
+                return render(request,'signup.html',{'form':UserCreationForm(),'error':'Username already taken. Choose new username.'})
         else:
-            return render(request, 'signup.html',{'form':UserCreationForm,'error':'Passwords do not match'})
+            return render(request, 'signup.html',{'form':UserCreationForm(),'error':'Passwords do not match'})
         
 
 def logoutaccount(request):
@@ -31,7 +31,7 @@ def logoutaccount(request):
 
 def loginaccount(request):
     if request.method == 'GET':
-        return render(request, 'login.html',{'form':AuthenticationForm})
+        return render(request, 'login.html',{'form':AuthenticationForm()})
     else:
         user = authenticate(request,
         username=request.POST['username'],
