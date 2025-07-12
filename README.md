@@ -7,10 +7,10 @@ We are make this project using Python-Django
 
 
 - Create Virtual Environment (env folder)
-python -m venv env
+    python -m venv env
 
 - Activate Virtual Environment
-.\env\Scripts\activate
+    .\env\Scripts\activate
 
 - Install Dependencies from requirements.txt
-pip install -r requirements.txt
+    pip install -r requirements.txt
