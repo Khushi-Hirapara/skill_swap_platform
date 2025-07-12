@@ -1,37 +1,24 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Profile, Skill, SwapRequest
+from .forms import SwapRequestForm
 
 def home(request):
     return render(request, 'home.html')
 
+<<<<<<< Updated upstream
 def profile(request):
     return render(request, 'profile.html')
 
 
+=======
+>>>>>>> Stashed changes
 def skill(request):
     return render(request, 'skill.html')
 
 def swap_skill(request):
     return render(request, 'swap_skill.html')
 
-
-# views.py
-
-from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
-from .models import SwapRequest, Skill, Profile
-from django import forms
-
-# ✅ Inline Form Class (only if you don't have forms.py)
-class SwapRequestForm(forms.ModelForm):
-    class Meta:
-        model = SwapRequest
-        fields = ['offered_skill', 'wanted_skill', 'message']
-        widgets = {
-            'message': forms.Textarea(attrs={'rows': 3}),
-        }
-
-# View function using the form
 @login_required
 def profile_view(request, username):
     user_profile = get_object_or_404(Profile, user__username=username)
@@ -52,4 +39,3 @@ def profile_view(request, username):
         'form': form,
     }
     return render(request, 'skill.html', context)
-
