@@ -6,13 +6,9 @@ from .forms import SwapRequestForm
 def home(request):
     return render(request, 'home.html')
 
-<<<<<<< Updated upstream
 def profile(request):
     return render(request, 'profile.html')
 
-
-=======
->>>>>>> Stashed changes
 def skill(request):
     return render(request, 'skill.html')
 
