@@ -1,2 +1,14 @@
-.env
+# Ignore Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Ignore virtual environment
 env/
+
+# Ignore environment variables file
+.env
+
+# Ignore Django SQLite database (optional)
+db.sqlite3

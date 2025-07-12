@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'skill_swap_app', #app name
+    'skill_swap_web', #app name
 ]
 
 MIDDLEWARE = [
