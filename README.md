@@ -6,8 +6,8 @@ Group Member Names:
 
 - Krushil Desai(TL) - krushildesai2005@gmail.com
 - Gaurav Kathiriya - kathiriyag1@gmail.com
-- Khushi Hirpara - 
-- Tulsi Kerai -
+- Khushi Hirpara - khushihirapra@gmail.com
+- Tulsi Kerai - tulikerai09@gmail.com
 
 
 We are make this project using Python-Django
