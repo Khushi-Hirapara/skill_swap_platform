@@ -13,8 +13,10 @@
     <div id="signupModal" class="modal">
         <div class="modal-content">
             <span class="close" id="closeSignup">&times;</span>
-            <form>
+            <form method="post" action="">
+                {% csrf_token %}
                 <h2>Sign Up</h2>
+
                 <label for="signup-username">Username</label>
                 <input type="text" id="signup-username" name="username" required>
 
@@ -28,8 +30,13 @@
                 <input type="password" id="signup-password2" name="password2" required>
 
                 <button type="submit">Create Account</button>
+
+                {% if error %}
+                <div class="alert alert-danger mt-3" role="alert">
+                    {{ error }}
+                </div>
+                {% endif %}
             </form>
-            <!-- Link to Login Page -->
             <p>Already have an account? <a href="{% url 'loginaccount' %}" class="link-to-login">Login</a></p>
         </div>
     </div>
@@ -38,14 +45,11 @@
         const signupModal = document.getElementById("signupModal");
         const closeSignup = document.getElementById("closeSignup");
 
-        // Automatically open the modal when the page loads
-        window.onload = function() {
+        window.onload = function () {
             signupModal.style.display = "block";
         };
-
         closeSignup.onclick = () => signupModal.style.display = "none";
-
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             if (event.target === signupModal) {
                 signupModal.style.display = "none";
             }
