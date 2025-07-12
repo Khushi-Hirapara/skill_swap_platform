@@ -11,21 +11,40 @@
     <header>
         <h1>Skill Swap Platform</h1>
         <a href="/" class="home-button">Home</a>
+        <button id="openLogin" class="home-button">Login</button>
     </header>
 
-    <div class="login-container">
-        <form method="post">
-            {% csrf_token %}    
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required>
-            <br><br>
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-
-            <button type="submit">Login</button>
-
-            <a href="#" class="forgot-link">Forgot username/password</a>
-        </form>
+    <!-- Modal Login Container -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form method="post">
+                {% csrf_token %}
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+                <a href="#" class="forgot-link">Forgot username/password?</a>
+            </form>
+        </div>
     </div>
+
+    <script>
+        const modal = document.getElementById("loginModal");
+        const openBtn = document.getElementById("openLogin");
+        const closeBtn = document.querySelector(".close");
+
+        // Open modal when the "Login" button is clicked
+        openBtn.onclick = () => modal.style.display = "block";
+
+        // Close modal when the "X" button is clicked
+        closeBtn.onclick = () => modal.style.display = "none";
+
+        // Close modal when clicking outside of the modal
+        window.onclick = (e) => {
+            if (e.target === modal) modal.style.display = "none";
+        };
+    </script>
 </body>
 </html>
